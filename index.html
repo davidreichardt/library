@@ -1,13 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="main.css">
-  <title>Library</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="main.css" />
+    <title>Library</title>
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="main-heading">Your Library</h1>
+      <button type="button" class="new-book">New Book</button>
+    </header>
+    <div class="library-container">
+      <div class="book">
+        <h3 class="book-title">Harry Potter and the Deathly Hallows</h3>
+        <p class="book-author">J.K. Rowling</p>
+        <p class="book-pages">784 <span>Pages</span></p>
+        <button type="button" class="book-read">Not Read</button>
+      </div>
+    </div>
 
-  <script src="main.js"></script>
-</body>
+    <dialog>
+      <form>
+        <label for="new-book-title">Title</label>
+        <input type="text" name="new-book-title" id="new-book-title">
+        <label for="new-book-author">Author</label>
+        <input type="text" name="new-book-author" id="new-book-author">
+        <label for="new-book-pages">Author</label>
+        <input type="number" name="new-book-pages" id="new-book-pages">
+      </form>
+    </dialog>
+
+    <script src="main.js"></script>
+  </body>
 </html>
