@@ -88,12 +88,6 @@ html {
 }
 
 dialog {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 50rem;
-  height: 30rem;
   margin: auto;
   padding: 2rem;
 }
