@@ -22,6 +22,8 @@ html {
   padding: 0;
 }
 
+/* header */
+
 .header {
   background-color: var(--blue);
   padding: 2rem;
@@ -42,6 +44,8 @@ html {
   height: 3rem;
   margin-top: 2rem;
 }
+
+/* library container and new book items */
 
 .library-container {
   display: grid;
@@ -86,6 +90,8 @@ html {
   text-align: center;
   background-color: var(--yellow);
 }
+
+/* dialog */
 
 dialog {
   margin: auto;

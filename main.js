@@ -23,16 +23,10 @@ function Book(title, author, pages, read = false) {
   this.read = read;
 }
 
+//toggle read status
 Book.prototype.toggleReadStatus = function () {
   this.read = !this.read;
 };
-
-//add eventlistener to read status button
-// readStatusButton.addEventListener('click', () => {});
-//default read status is false and is yellow
-//user clicks on read status button
-//user click changes it to true, and it becomes green and says read
-//toggleable
 
 function addBookToLibrary(title, author, pages) {
   const book = new Book(title, author, pages);
@@ -40,6 +34,9 @@ function addBookToLibrary(title, author, pages) {
   console.log(myLibrary);
 }
 
+//open dialog form and assign inputs
+//add new book to library array
+//re-render array to page, reset the form and close it
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   const title = document.getElementById('new-book-title').value.trim();
@@ -51,6 +48,7 @@ form.addEventListener('submit', (e) => {
   dialog.close();
 });
 
+//create DOM elements for new book to create a new book
 function createBookCard(book) {
   const newBookCard = document.createElement('div');
   const newBookTitle = document.createElement('h3');
@@ -82,6 +80,8 @@ function createBookCard(book) {
   return newBookCard;
 }
 
+//wipe the container to prevent duplicates
+//take DOM element created and append it to the container to render it on page
 function renderLibrary() {
   libraryContainer.innerHTML = '';
   myLibrary.forEach((book) => {
