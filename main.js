@@ -91,6 +91,15 @@ function createBookCard(book) {
   removeBookButton.setAttribute('type', 'button');
   removeBookButton.textContent = 'Remove';
 
+  //find index of book clicked that matches id and remove it
+  removeBookButton.addEventListener('click', () => {
+    const bookIndex = myLibrary.findIndex(b => b.id === book.id);
+    if (bookIndex > -1) {
+      myLibrary.splice(bookIndex, 1);
+      renderLibrary();
+    }
+  });
+
   newBookCard.appendChild(newBookTitle);
   newBookCard.appendChild(newBookAuthor);
   newBookCard.appendChild(newBookPages);
