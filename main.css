@@ -1,9 +1,10 @@
 :root {
   --blue: #1372bb;
-  --yellow: #ccb718;
+  --not-read: #ccb718;
   --background: #a7a5a560;
-  --green: #00ac09cd;
+  --read: #00ac09cd;
   --modal-backdrop: #1c1c1ca6;
+  --remove: #a00101;
 }
 
 html {
@@ -82,13 +83,23 @@ html {
   font-size: 1.4rem;
 }
 
-.book-read {
+.book-read,
+.remove {
   border: 1px solid black;
   width: 8rem;
   height: 3rem;
   border-radius: 15px;
   text-align: center;
-  background-color: var(--yellow);
+}
+
+.book-read {
+  background-color: var(--not-read);
+}
+
+.remove {
+  background-color: var(--remove);
+  justify-self: flex-end;
+  align-self: flex-end;
 }
 
 /* dialog */

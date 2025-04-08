@@ -55,6 +55,7 @@ function createBookCard(book) {
   const newBookAuthor = document.createElement('p');
   const newBookPages = document.createElement('p');
   const newBookRead = document.createElement('button');
+  const removeBookButton = document.createElement('button');
 
   newBookCard.classList.add('book');
   newBookCard.setAttribute('data-id', book.id);
@@ -72,10 +73,15 @@ function createBookCard(book) {
   newBookRead.setAttribute('type', 'button');
   newBookRead.textContent = book.read ? 'Not Read' : 'Read';
 
+  removeBookButton.classList.add('remove');
+  removeBookButton.setAttribute('type', 'button');
+  removeBookButton.textContent = 'Remove';
+
   newBookCard.appendChild(newBookTitle);
   newBookCard.appendChild(newBookAuthor);
   newBookCard.appendChild(newBookPages);
   newBookCard.appendChild(newBookRead);
+  newBookCard.appendChild(removeBookButton);
 
   return newBookCard;
 }
