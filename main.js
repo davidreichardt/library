@@ -4,8 +4,9 @@ const dialog = document.querySelector('dialog');
 const submit = document.querySelector('.submit');
 const close = document.querySelector('.close');
 const form = document.getElementById('new-book-form');
-const readStatusButton = document.querySelector('.read-status');
+const readStatusButton = document.querySelector('.book-read');
 const libraryContainer = document.querySelector('.library-container');
+const cssVariable = window.getComputedStyle(document.documentElement);
 
 newBookButton.addEventListener('click', () => {
   dialog.showModal();
@@ -71,7 +72,20 @@ function createBookCard(book) {
 
   newBookRead.classList.add('book-read');
   newBookRead.setAttribute('type', 'button');
-  newBookRead.textContent = book.read ? 'Not Read' : 'Read';
+  newBookRead.textContent = !book.read ? 'Not Read' : 'Read';
+  newBookRead.style.backgroundColor = !book.read
+    ? cssVariable.getPropertyValue('--not-read')
+    : cssVariable.getPropertyValue('--read');
+
+  //toggle the read status and re-render the library
+  newBookRead.addEventListener('click', () => {
+    book.toggleReadStatus();
+    newBookRead.textContent = book.read ? 'Not Read' : 'Read';
+    newBookRead.style.backgroundColor = book.read
+      ? cssVariable.getPropertyValue('--not-read')
+      : cssVariable.getPropertyValue('--read');
+    renderLibrary();
+  });
 
   removeBookButton.classList.add('remove');
   removeBookButton.setAttribute('type', 'button');
